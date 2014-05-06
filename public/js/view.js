@@ -3,6 +3,10 @@ function View() {
 	this.signUpLinkSelector = '.singup-link'
 }
 
-View.prototype = {
+// View.prototype = {
+// 	getAuthPanel: function() {
 
-}
+// 	},
+
+// 	get
+// }

@@ -3,7 +3,14 @@ get '/' do
 end
 
 get '/authenticate' do
-
+  api_key = ENV['LINKEDIN_API_KEY']
+  puts "this is my api key#{api_key}"
+  scope = 'r_basicprofile%20r_emailaddress'
+  state = "sdk304;sdk344"
+  redirect_uri = "http://localhost:9393/users/token"
+  request_uri = "https://www.linkedin.com/uas/oauth2/authorization?response_type=code&client_id=#{api_key}&scope=#{scope}&state=#{state}&redirect_uri=#{redirect_uri}"
+  p request_uri
+  redirect to request_uri
 end
 
 get 'users/new' do
