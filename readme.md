@@ -6,4 +6,4 @@
 
 ######Dev Breakdown
 1. Check in - make ajax post request to '/events' on a window.onload
-2. Review - make a ajax get request to '/events/' on a window.onload
+2. Review - make a ajax get request to '/events/' on a window.onloadig

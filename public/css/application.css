@@ -1,0 +1,32 @@
+.container {
+  margin: 20px auto;
+  max-width: 960px;
+}
+
+.grid-1 {
+	width: 25%;
+}
+
+.grid-2 {
+	width: 50%;
+}
+
+.grid-3 {
+	width: 75%;
+}
+
+.grid-4 {
+	width: 100%;
+}
+
+.navbar {
+	position: fixed-top;
+	background-color: #ecf0f1;
+	border-bottom: 2px solid #bdc3c7;
+	height: 40px;
+}
+
+
+th {
+  text-align: left;
+}
