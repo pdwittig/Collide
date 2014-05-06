@@ -20,6 +20,8 @@ gem 'shotgun'
 
 gem 'bcrypt'
 
+gem 'httparty'
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'

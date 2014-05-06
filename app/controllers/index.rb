@@ -1,16 +1,21 @@
+# require 'httparty'
+
 get '/' do
   erb :index
 end
 
-get '/authenticate' do
+get '/linkedin_auth' do
   api_key = ENV['LINKEDIN_API_KEY']
   puts "this is my api key#{api_key}"
   scope = 'r_basicprofile%20r_emailaddress'
   state = "sdk304;sdk344"
-  redirect_uri = "http://localhost:9393/users/token"
+  redirect_uri = "http://localhost:9393/auth"
   request_uri = "https://www.linkedin.com/uas/oauth2/authorization?response_type=code&client_id=#{api_key}&scope=#{scope}&state=#{state}&redirect_uri=#{redirect_uri}"
-  p request_uri
-  redirect to request_uri
+  redirect request_uri
+end
+
+get '/auth/' do
+  p params
 end
 
 get 'users/new' do
@@ -26,6 +31,19 @@ get 'users/new' do
     { errors: user.errors.full_massages }.to_json
   end
 end
+
+
+#Raorao example
+# get '/' do
+
+# end
+
+# get '/auth' do
+
+# end
+
+
+httpparty.post, url, {query: { }}
 
 
 
