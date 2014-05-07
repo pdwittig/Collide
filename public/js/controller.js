@@ -17,7 +17,23 @@ Controller.prototype = {
 			type: "post",
 			data: {position: preppedPosition}
 		})
-		ajaxRequest.done(this.confirmKollidEvent)
+		ajaxRequest.done(this.confirmKollideEvent)
+	},
+
+	confirmKollideEvent: function(response) {
+		console.log(response)
+	},
+
+	getKollisions: function() {
+		ajaxRequest = $.ajax({
+			url: '/',
+			type: '',
+		})
+		ajaxRequest.done(this.displayKollisions)
+	},
+
+	displayKollisions: function() {
+
 	},
 
 	prepPositionData: function(position) {
@@ -27,8 +43,10 @@ Controller.prototype = {
 		return JSON.stringify(coords)
 	},
 
-	confirmKollidEvent: function(response) {
-		console.log(response)
+	checkPage: function() {
+		if (window.location.hash === '#home') {
+			this.getKollisions();
+		}
 	}
 
 }

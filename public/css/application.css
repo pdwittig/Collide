@@ -107,6 +107,36 @@ input[type="submit"]{
 	float: left;
 }
 
+.content {
+	/*border-top: 2px solid #E2E7EB;*/
+	margin-top: 50px;
+}
+ 
+.kollisions {
+	background-color: #fff;
+	border: 1px solid #ddd;
+}
+
+.kollision {
+	margin: 0 50px 0 50px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #eee;
+}
+
+.kollision img {
+	border-radius: 3px;
+}
+
+.img-container {
+	padding-top: 20px;
+}
+
+
+.kollision h3 {
+	margin-top: 2px;
+	margin-bottom: 0;
+}
+
 
 th {
   text-align: left;

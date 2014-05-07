@@ -1,5 +1,7 @@
 get '/' do
   @user = get_user
+  @kollisions = @user.get_kollisions if @user
+  p @kollisions if @user
   erb :index
 end
 
@@ -14,7 +16,7 @@ get '/auth' do
   user_info = client.get_user_info(access_token)
   user = User.create_or_update(user_info, access_token)
   session[:id] = user.id
-  redirect '/'
+  redirect '/#home'
 end
 
 post '/events/new' do
@@ -25,6 +27,8 @@ post '/events/new' do
   content_type :json
   event
 end
+
+
 
 get '/sign_out' do
   session.clear

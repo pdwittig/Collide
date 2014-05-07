@@ -18,6 +18,10 @@ class User < ActiveRecord::Base
   	end
   	return user
   end
+
+  def get_kollisions
+    self.events.map { |event| event.find_kollisions }.uniq.flatten
+  end
 end
 
 

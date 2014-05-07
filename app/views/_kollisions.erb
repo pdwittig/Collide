@@ -1,0 +1,13 @@
+<div class="wide-container content">
+	<div class="column grid-4 container kollisions">
+		<% @kollisions.each do |kollision| %>
+		<div class="kollision">
+			<div class="img-container">
+			<img src="<%= kollision.user.img_url %>" alt="user image">
+			</div>
+			<h3><%= kollision.user.first_name %> <%= kollision.user.last_name %>
+			</h3>
+		</div>
+		<% end %>
+	</div>
+</div>

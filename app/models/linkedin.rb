@@ -1,7 +1,7 @@
 module Linkedin
 	class Client
 		def initialize
-			@redirect_uri = 'http://localhost:9393/auth'
+			@redirect_uri = ENV['REDIRECT_URI']
 			@base_auth_uri = 'https://www.linkedin.com/uas/oauth2/authorization?'
 			@base_people_uri = 'https://api.linkedin.com/v1/people/~'
 		end
