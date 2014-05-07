@@ -11,6 +11,7 @@ Controller.prototype = {
 	},
 
 	createKollideEvent: function(position) {
+		// LINDSEY COMMENT: So far all of your variable and function/method naming is AWESOME, but "preppedPosition" is the first place where I don't immediately know what that means / what the variable is for. Maybe consider renaming?
 		preppedPosition = this.prepPositionData(position)
 		ajaxRequest = $.ajax({
 			url: 'events/new',
@@ -27,6 +28,7 @@ Controller.prototype = {
 		return JSON.stringify(coords)
 	},
 
+// LINDSEY COMMENT: Missing an 'e' in Kollide :)
 	confirmKollidEvent: function(response) {
 		console.log(response)
 	}

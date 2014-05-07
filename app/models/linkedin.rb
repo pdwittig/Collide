@@ -1,6 +1,7 @@
 module Linkedin
 	class Client
 		def initialize
+			### LINDSEY COMMENT: If you haven't already, think ahead about what the redirect URI will be once you've deployed (would this just be '/auth'?)
 			@redirect_uri = 'http://localhost:9393/auth'
 			@base_auth_uri = 'https://www.linkedin.com/uas/oauth2/authorization?'
 			@base_people_uri = 'https://api.linkedin.com/v1/people/~'

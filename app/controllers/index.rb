@@ -1,4 +1,5 @@
 get '/' do
+  ### LINDSEY COMMENT: Because the get_user method is so short (only one line), is it necessary to pull it out in a helper?
   @user = get_user
   erb :index
 end
