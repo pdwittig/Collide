@@ -1,13 +1,24 @@
 class User < ActiveRecord::Base
   has_many :events
-  # include BCrypt
 
-  # def password
-  # 	@password ||= Password.new(password_hash)
-  # end
-
-  # def password=(new_password)
-  # 	@password = Password.create(new_password)
-  # 	self.password_hash = @password
-  # end
+  def self.create_or_update user_info, access_token
+  	user = self.find_by_email user_info["emailAddress"]
+  	if !user
+  		user = self.create( first_name: user_info["firstName"],
+  								 				last_name: user_info["lastName"],
+  												email: user_info["emailAddress"],
+  								 				img_url: user_info["pictureUrl"],
+  								 				access_token: access_token )
+  	else
+  		user.update_attributes( first_name: user_info["firstName"],
+  								 						 last_name: user_info["lastName"],
+  								 						 email: user_info["emailAddress"],
+  								 						 img_url: user_info["pictureUrl"],
+  								 						 access_token: access_token )
+  	end
+  	return user
+  end
 end
+
+
+

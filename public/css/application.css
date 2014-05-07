@@ -17,8 +17,13 @@ input[type="submit"]{
 }
 
 .container {
-  margin: 20px auto;
+  margin: 0px auto;
   max-width: 960px;
+}
+
+.wide-container {
+	margin: 0px auto;
+  max-width: 1148px;
 }
 
 .panel {
@@ -29,6 +34,7 @@ input[type="submit"]{
 
 .column {
 	float: left;
+	margin-top: 50px;
 }
 
 .grid-1 {
@@ -60,13 +66,49 @@ input[type="submit"]{
 	padding-top: 10px;
 	padding-left: 20px;
 	margin: 0;
+	float: left;
+	width: 83%;
 }
 
 .signup-link {
 	margin-left: 5%;
 }
 
+.linkedin-button {
+	width: 300px;
+	margin-left: 5%;
+	margin-top: 20px;
+}
+
+.avatar-container {
+	float: left;
+	text-align: right;
+	/*width: 50%;*/
+	margin: 0;
+}
+
+.avatar-container img {
+	margin: 5px 0 0 0;
+	width: 50px;
+	border-radius: 3px;
+}
+
+.signout-button {
+	text-decoration: none;
+	background-color: #2980b9;
+	color: #ecf0f1;
+	padding: 5px 10px;
+	border-radius: 3px;
+}
+
+.signout-container {
+	margin: 20px 0 0 10px;
+	width: 10%;
+	float: left;
+}
+
 
 th {
   text-align: left;
 }
+

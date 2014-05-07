@@ -1,8 +1,8 @@
 class CreateEvents < ActiveRecord::Migration
   def change
   	create_table :events do |t|
-  		t.string :latitude
-  		t.string :longitude
+  		t.float :latitude
+  		t.float :longitude
   		t.integer :user_id
   		t.timestamps
   	end

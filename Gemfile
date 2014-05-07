@@ -21,6 +21,11 @@ gem 'shotgun'
 gem 'bcrypt'
 
 gem 'httparty'
+gem 'rest-client'
+
+gem 'dotenv'
+
+gem 'haversine'
 
 group :test do
   gem 'shoulda-matchers'

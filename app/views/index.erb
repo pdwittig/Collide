@@ -1,4 +1,5 @@
 <div class="container">
-  <%= erb :_landing_info %>
-  <%= erb :_login %>
+  <%= erb :_landing_info unless @user %>
+  <%= erb :_login unless @user %>
+  <%= erb :_kollisions if @user %>
 </div>

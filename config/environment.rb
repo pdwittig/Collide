@@ -21,7 +21,13 @@ require "sinatra/reloader" if development?
 require 'erb'
 
 require 'httparty'
+require 'rest-client'
+# require 'URI'
 
+require 'dotenv'
+Dotenv.load
+
+require 'haversine'
 # require 'bcrypt'
 
 

@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	view = new View();
-	controller = new Contoller(view);
-	controller.bindEvents();
+	controller = new Controller(view);
+	controller.getGeoLocation();
+
 });

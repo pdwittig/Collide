@@ -1,50 +1,35 @@
-# require 'httparty'
-
 get '/' do
+  @user = get_user
   erb :index
 end
 
 get '/linkedin_auth' do
-  api_key = ENV['LINKEDIN_API_KEY']
-  puts "this is my api key#{api_key}"
-  scope = 'r_basicprofile%20r_emailaddress'
-  state = "sdk304;sdk344"
-  redirect_uri = "http://localhost:9393/auth"
-  request_uri = "https://www.linkedin.com/uas/oauth2/authorization?response_type=code&client_id=#{api_key}&scope=#{scope}&state=#{state}&redirect_uri=#{redirect_uri}"
-  redirect request_uri
+  client = Linkedin::Client.new
+  redirect client.get_auth_redirect_uri
 end
 
-get '/auth/' do
-  p params
+get '/auth' do
+  client = Linkedin::Client.new
+  access_token = client.get_access_token params[:code]
+  user_info = client.get_user_info(access_token)
+  user = User.create_or_update(user_info, access_token)
+  session[:id] = user.id
+  redirect '/'
 end
 
-get 'users/new' do
-  user = User.new email: params[:email]
-  user.password = params[:password]
-  if user.valid?
-    user.save
-    content_type :json
-    user.to_json
-  else
-    status 422
-    content_type :json
-    { errors: user.errors.full_massages }.to_json
-  end
+post '/events/new' do
+  position = JSON.parse(params["position"])
+  user = get_user
+  event = user.events.create(latitude: position['latitude'], 
+                             longitude: position['longitude'])
+  content_type :json
+  event
 end
 
-
-#Raorao example
-# get '/' do
-
-# end
-
-# get '/auth' do
-
-# end
-
-
-httpparty.post, url, {query: { }}
-
+get '/sign_out' do
+  session.clear
+  redirect '/'
+end
 
 
 
