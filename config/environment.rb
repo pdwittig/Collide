@@ -30,6 +30,9 @@ Dotenv.load
 require 'haversine'
 # require 'bcrypt'
 
+require 'sidekiq'
+require 'redis'
+
 
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))

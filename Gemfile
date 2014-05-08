@@ -27,6 +27,9 @@ gem 'dotenv'
 
 gem 'haversine'
 
+gem 'sidekiq'
+gem 'redis'
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'

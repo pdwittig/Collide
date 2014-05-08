@@ -18,7 +18,6 @@ View.prototype = {
 		template.find('.kollision-date').replaceWith(kollision.formattedDate)
 		template.find('.kollision-friend-img').replaceWith('<img src="' + kollision.imgUrl +'" alt="user image">')
 		template.find('.kollision-friend-name').replaceWith(kollision.firstName + ' ' + kollision.lastName)
-
 	}
 
 }
