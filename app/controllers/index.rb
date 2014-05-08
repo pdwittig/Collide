@@ -1,7 +1,7 @@
 get '/' do
   @user = get_user
-  @kollisions = @user.get_kollisions if @user
-  p @kollisions if @user
+  # @kollisions = @user.get_kollisions if @user
+  # p @kollisions if @user
   erb :index
 end
 
@@ -26,6 +26,12 @@ post '/events/new' do
                              longitude: position['longitude'])
   content_type :json
   event
+end
+
+get '/kollisions' do
+  user = get_user
+  content_type :json
+  user.get_kollisions_json
 end
 
 

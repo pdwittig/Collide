@@ -110,7 +110,7 @@ input[type="submit"]{
 	margin-top: 50px;
 }
 
-.new-kollision {
+.kollisions {
 	border-left: 8px solid #fff;
 	padding-left: 40px;
 	margin: 0 auto;
@@ -134,7 +134,7 @@ input[type="submit"]{
 	top: 22px;
 }
 
-.new-kollision li {
+.kollisions li {
 	height: 100px;
 	/*margin-top: 20px;*/
 	padding-top: 50px;
@@ -158,7 +158,7 @@ input[type="submit"]{
 	top: 45px;
 }
 
-.inner-kollision {
+.friend-info {
 	background-color: #fff;
 	border: 1px solid #E1E6E7;
 	border-radius: 2px;
@@ -167,12 +167,16 @@ input[type="submit"]{
 	width: 80%;
 }
 
-.inner-kollision h3 {
+.friend-info h3 {
 	padding-left: 120px;
 }
 
 
 th {
   text-align: left;
+}
+
+.hidden {
+	display: none;
 }
 

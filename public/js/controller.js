@@ -1,5 +1,7 @@
-function Controller(view) {
+function Controller(view, user, factory) {
 	this.view = view
+	this.user = user
+	this.factory = factory
 }
 
 Controller.prototype = {
@@ -26,14 +28,16 @@ Controller.prototype = {
 
 	getKollisions: function() {
 		ajaxRequest = $.ajax({
-			url: '/',
-			type: '',
+			url: '/kollisions',
+			type: 'get',
 		})
-		ajaxRequest.done(this.displayKollisions)
+		ajaxRequest.done(this.displayKollisions.bind(this))
 	},
 
-	displayKollisions: function() {
-
+	displayKollisions: function(response) {
+		kollisions = this.factory.build_kollisions(response);
+		this.user.addKollisions(kollisions);
+		this.view.renderKollisions(kollisions);
 	},
 
 	prepPositionData: function(position) {

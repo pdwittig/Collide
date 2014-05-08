@@ -19,8 +19,19 @@ class User < ActiveRecord::Base
   	return user
   end
 
+  def get_kollisions_json
+    get_kollisions.map do |kollision|
+      { first_name:     kollision.user.first_name,
+        last_name:      kollision.user.last_name,
+        img_url:        kollision.user.img_url,
+        formatted_date: kollision.formatted_date
+      }
+    end.to_json
+  end
+
   def get_kollisions
-    self.events.map { |event| event.find_kollisions }.uniq.flatten
+    user = User.find(self.id)
+    user.events.map { |event| event.find_kollisions }.uniq.flatten
   end
 end
 
