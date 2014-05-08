@@ -62,7 +62,6 @@ input[type="submit"]{
 }
 
 .navbar h1 {
-	/*margin: 20px 0 0 20px;*/
 	padding-top: 10px;
 	padding-left: 20px;
 	margin: 0;
@@ -108,33 +107,68 @@ input[type="submit"]{
 }
 
 .content {
-	/*border-top: 2px solid #E2E7EB;*/
 	margin-top: 50px;
 }
- 
-.kollisions {
-	background-color: #fff;
-	border: 1px solid #ddd;
+
+.new-kollision {
+	border-left: 8px solid #fff;
+	padding-left: 40px;
+	margin: 0 auto;
+	list-style: none;
+	border-radius: 3px;
+	width: 50%;
 }
 
-.kollision {
-	margin: 0 50px 0 50px;
-	padding-bottom: 20px;
-	border-bottom: 1px solid #eee;
+.relative {
+	position: relative;
+	padding-left: 30px;
 }
 
-.kollision img {
+.relative img {
 	border-radius: 3px;
 }
 
-.img-container {
-	padding-top: 20px;
+.relative h3 {
+	position: absolute;
+	left: -230px;
+	top: 22px;
 }
 
+.new-kollision li {
+	height: 100px;
+	/*margin-top: 20px;*/
+	padding-top: 50px;
+	width: 100%;
 
-.kollision h3 {
-	margin-top: 2px;
-	margin-bottom: 0;
+}
+
+.relative img {
+	position: absolute;
+	left: 25px;
+	top: 17px;
+}
+.relative span {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: #2980B9;
+	position: absolute;
+	border: 4px solid #fff;
+	left: -52px;
+	top: 45px;
+}
+
+.inner-kollision {
+	background-color: #fff;
+	border: 1px solid #E1E6E7;
+	border-radius: 2px;
+	padding: 25px 0;
+	display: inline-block;
+	width: 80%;
+}
+
+.inner-kollision h3 {
+	padding-left: 120px;
 }
 
 

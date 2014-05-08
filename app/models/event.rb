@@ -8,4 +8,8 @@ class Event < ActiveRecord::Base
 		end
 	end
 
+	def formatted_date
+		self.created_at.strftime("%a %-m/%-d @%l%P" )
+	end
+
 end

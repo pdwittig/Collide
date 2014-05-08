@@ -1,13 +1,18 @@
 <div class="wide-container content">
-	<div class="column grid-4 container kollisions">
+<div class="container">
+	<ul class="new-kollision">
 		<% @kollisions.each do |kollision| %>
-		<div class="kollision">
-			<div class="img-container">
-			<img src="<%= kollision.user.img_url %>" alt="user image">
+		<li>
+			<div class="relative">
+			<h3><%= kollision.formatted_date %></h3>
+				<span></span>
+				<img src="<%= kollision.user.img_url %>" alt="user image">
 			</div>
-			<h3><%= kollision.user.first_name %> <%= kollision.user.last_name %>
-			</h3>
-		</div>
+			<div class="inner-kollision">
+				<h3><%= kollision.user.first_name %> <%= kollision.user.last_name %></h3>
+			</div>	
+		</li>
 		<% end %>
+	</ul>
 	</div>
 </div>
