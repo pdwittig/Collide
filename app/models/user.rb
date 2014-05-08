@@ -33,6 +33,8 @@ class User < ActiveRecord::Base
     user = User.find(self.id)
     user.events.map { |event| event.find_kollisions }.uniq.flatten
   end
+
+  def test_get_kollissions
 end
 
 
