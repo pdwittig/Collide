@@ -33,6 +33,9 @@ require 'haversine'
 require 'sidekiq'
 require 'redis'
 
+# require 'sidekiq/web'
+# mount Sidekiq::Web => '/sidekiq'
+
 
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))

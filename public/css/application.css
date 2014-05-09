@@ -141,7 +141,6 @@ input[type="submit"]{
 
 .kollisions li {
 	height: 100px;
-	/*margin-top: 20px;*/
 	padding-top: 50px;
 	width: 100%;
 
@@ -158,8 +157,8 @@ input[type="submit"]{
 	border-radius: 50%;
 	background-color: #2980B9;
 	position: absolute;
-	border: 4px solid #fff;
-	left: -53px;
+	border: 5px solid #fff;
+	left: -54px;
 	top: 45px;
 }
 
@@ -171,6 +170,10 @@ input[type="submit"]{
 	display: inline-block;
 	width: 80%;
 }
+
+/*.friend-info:hover {
+	background-color: #f2f2f2;
+}*/
 
 .friend-info h3 {
 	padding-left: 120px;
