@@ -25,14 +25,18 @@ class User < ActiveRecord::Base
     offset = kollisions_per_page * (page - 1) 
     kolliding_events = self.kolliding_events.limit(kollisions_per_page).offset(offset)
     users = User.all
+    formatted_events = []
 
-    kolliding_events.map do |kollision|
-      { first_name:     users.find { |user| kollision.user_id = user.id }.first_name,
-        last_name:      users.find { |user| kollision.user_id = user.id }.last_name,
-        img_url:        users.find { |user| kollision.user_id = user.id }.img_url,
-        formatted_date: kollision.formatted_date
-      }
-    end.to_json
+    kolliding_events.each do |kollision|
+      user = users.find { |user| kollision.user_id = user.id }
+      event =  { first_name:     user.first_name,
+                 last_name:      user.last_name,
+                 img_url:        user.img_url,
+                 formatted_date: kollision.formatted_date
+               }
+      formatted_events << event         
+    end
+    formatted_events.to_json
   end
 end
 

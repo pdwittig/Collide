@@ -7,7 +7,7 @@ function Controller(view, user, factory) {
 
 Controller.prototype = {
 	bindEvents: function() {
-		$(window).on('scroll', this.didScroll.bind(this))
+		$(window).on('scroll', controller.didScroll.bind(controller))
 	},
 
 	unbindEvents: function() {
@@ -15,10 +15,14 @@ Controller.prototype = {
 	},
 
 	didScroll: function() {
-		var totalDistToTop = $(document).height() - $(window).height()
-		var distToTriggerAjaxCall = totalDistToTop * (9/10)
-		if ( $(window).scrollTop() > distToTriggerAjaxCall ) {
-			this.getKollisions()
+		var docHeight = this.view.getDocHeight();
+		var windowheight = this.view.getWindowHeight();
+		var totalDistToTop = docHeight - windowheight
+		var distToTriggerAjaxCall = totalDistToTop * (7/10)
+		if ( this.view.getScrollTop() > distToTriggerAjaxCall &&
+				 docHeight > this.view.documentHeight ) {
+			this.view.documentHeight = docHeight
+			controller.getKollisions()
 		}
 	},
 
@@ -44,7 +48,6 @@ Controller.prototype = {
 	},
 
 	getKollisions: function() {
-		this.unbindEvents()
 		ajaxRequest = $.ajax({
 			url: '/kollisions?page=' + this.page,
 			type: 'get',
@@ -53,8 +56,9 @@ Controller.prototype = {
 	},
 
 	displayKollisions: function(response) {
-		this.bindEvents();
-		this.page += 1
+		console.log(response)
+		console.log(this.page)
+		this.page = this.page + 1
 		kollisions = this.factory.build_kollisions(response);
 		this.user.addKollisions(kollisions);
 		this.view.renderKollisions(kollisions);

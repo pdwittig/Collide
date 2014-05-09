@@ -1,5 +1,5 @@
 function View() {
-
+	this.documentHeight = 0
 }
 
 View.prototype = {
@@ -10,7 +10,7 @@ View.prototype = {
 			kollisionTemplate.removeClass('hidden')
 			kollisionTemplate.removeClass('template')
 			this.replaceValues(kollisionTemplate, kollisions[i])
-			kollisionsContainer.append(kollisionTemplate)		
+			kollisionsContainer.append(kollisionTemplate)
 		}
 	},
 
@@ -18,6 +18,17 @@ View.prototype = {
 		template.find('.kollision-date').replaceWith(kollision.formattedDate)
 		template.find('.kollision-friend-img').replaceWith('<img src="' + kollision.imgUrl +'" alt="user image">')
 		template.find('.kollision-friend-name').replaceWith(kollision.firstName + ' ' + kollision.lastName)
-	}
+	},
 
+	getDocHeight: function() {
+		return $(document).height()
+	},
+
+	getWindowHeight: function() {
+		return $(window).height();
+	},
+
+	getScrollTop: function() {
+		return $(document).scrollTop();
+	}
 }
