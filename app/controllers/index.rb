@@ -29,7 +29,7 @@ end
 get '/kollisions' do
   user = get_user
   content_type :json
-  p user.get_kollisions_json(params[:page].to_i, 20)
+  user.get_kollisions_json(params[:page].to_i, 20)
 end
 
 

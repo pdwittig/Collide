@@ -10,12 +10,14 @@ class User < ActiveRecord::Base
   								 				last_name: user_info["lastName"],
   												email: user_info["emailAddress"],
   								 				img_url: user_info["pictureUrl"],
+                          profile_url: user_info["siteStandardProfileRequest"]["url"],
   								 				access_token: access_token )
   	else
   		user.update_attributes( first_name: user_info["firstName"],
   								 						 last_name: user_info["lastName"],
   								 						 email: user_info["emailAddress"],
   								 						 img_url: user_info["pictureUrl"],
+                               profile_url: user_info["siteStandardProfileRequest"]["url"],
   								 						 access_token: access_token )
   	end
   	return user
@@ -32,6 +34,7 @@ class User < ActiveRecord::Base
       event =  { first_name:     user.first_name,
                  last_name:      user.last_name,
                  img_url:        user.img_url,
+                 profile_url:    user.profile_url, 
                  formatted_date: kollision.formatted_date
                }
       formatted_events << event         

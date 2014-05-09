@@ -30,7 +30,7 @@ module Linkedin
 		end
 
 		def get_user_info access_token
-			fields = ['first-name', 'last-name', 'email-address', 'picture-url']
+			fields = ['first-name', 'last-name', 'email-address', 'picture-url', 'site-standard-profile-request']
 			request_uri = "#{@base_people_uri}:(#{fields.join(',')})"
 			response = RestClient.get(request_uri , params:
 																{ 
