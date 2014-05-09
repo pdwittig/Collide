@@ -1,7 +1,5 @@
 get '/' do
   @user = get_user
-  # @kollisions = @user.get_kollisions if @user
-  # p @kollisions if @user
   erb :index
 end
 
@@ -29,9 +27,10 @@ post '/events/new' do
 end
 
 get '/kollisions' do
+  p params
   user = get_user
   content_type :json
-  user.get_kollisions_json
+  user.get_kollisions_json(params[:page].to_i, 25)
 end
 
 

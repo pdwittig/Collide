@@ -3,6 +3,6 @@ $(document).ready(function() {
 	user = new User();
 	factory = new Factory()
 	controller = new Controller(view, user, factory);
-	controller.getGeoLocation();
 	controller.checkPage();
+	controller.bindEvents();
 });
